@@ -1,4 +1,4 @@
-import Login from "./login/login.jsx";
+import Login from "./login/Login.jsx";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Route, Routes } from "react-router-dom";
