@@ -5,12 +5,15 @@ import authRouter from './route/authUser.js';
 import messageRouter from './route/messageRoute.js';
 import cookieParser from 'cookie-parser';
 import userRouter from './route/userRout.js';
+import path from 'path';
 
 
 // Now, as I Know socket.io work above the express server, so we to replace it with socket.io server
 // const app = express();
 
 import {app, server} from './Socket/socket.js'
+
+const __dirname = path.resolve();
 
 dotenv.config();
 
@@ -21,11 +24,11 @@ app.use('/api/auth',authRouter);
 app.use('/api/message',messageRouter)
 app.use('/api/user',userRouter)
 
+app.use(express.static(path.join(__dirname,"/frontend/dist")))
 
 
-
-app.get('/',(req,res)=>{
-    res.send("Server is working");
+app.get("*",(req,res)=>{
+    res.sendFile(path.join(__dirname,"frontend","dist","index.html"))
 });
 
 const PORT = process.env.PORT || 3000;
