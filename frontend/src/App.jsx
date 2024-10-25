@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
 import Login from './login/Login.jsx';
-=======
+
 import Login from "./login/Login.jsx";
->>>>>>> a5089f1273093310fa936bc2ad239831f22b292c
+
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Route, Routes } from "react-router-dom";
